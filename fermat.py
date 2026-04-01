@@ -5,13 +5,13 @@ import time
 def fermat(n):
   s = sqrt(n)
   if Decimal(s) % 1 == 0:
-    return [s,s]
+    return (int(s), int(s))
 
   a = ceil(s)
   while a <= n:
     b = sqrt(a**2 - n)
     if Decimal(b) % 1 == 0:
-      return [int(a+b),int(a-b)]
+      return (int(a+b), int(a-b))
     a += 1
 
   return -1
@@ -22,7 +22,7 @@ n3 = 800090608581732401
 n4 = 22601441855002489679
 
 start = time.time()
-f = fermat(n3)
+f = fermat(n1)
 end = time.time()
 print(f, end - start, 'seconds')
 
